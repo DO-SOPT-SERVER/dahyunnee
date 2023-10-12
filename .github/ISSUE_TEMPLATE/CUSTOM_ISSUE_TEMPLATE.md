@@ -1,12 +1,3 @@
----
-name: Custom issue template
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
-
 <!-- 해당 주차에 맞추어 작성해주세요 -->
 ## 📝 N주차 실습 내용
 - 설명설명
