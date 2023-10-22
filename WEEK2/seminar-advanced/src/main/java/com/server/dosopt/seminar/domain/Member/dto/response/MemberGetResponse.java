@@ -1,7 +1,7 @@
-package com.server.dosopt.seminar.dto.response;
+package com.server.dosopt.seminar.domain.Member.dto.response;
 
-import com.server.dosopt.seminar.domain.Member;
-import com.server.dosopt.seminar.domain.SOPT;
+import com.server.dosopt.seminar.domain.Member.entity.Member;
+import com.server.dosopt.seminar.domain.Member.entity.SOPT;
 
 public record MemberGetResponse (
    String name,

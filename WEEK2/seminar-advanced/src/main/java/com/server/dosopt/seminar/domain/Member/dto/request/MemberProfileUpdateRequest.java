@@ -1,9 +1,6 @@
-package com.server.dosopt.seminar.dto.request;
+package com.server.dosopt.seminar.domain.Member.dto.request;
 
-import com.server.dosopt.seminar.domain.Part;
-import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.server.dosopt.seminar.domain.Member.entity.Part;
 
 
 /*

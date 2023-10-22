@@ -1,4 +1,4 @@
-package com.server.dosopt.seminar.domain;
+package com.server.dosopt.seminar.domain.Member.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

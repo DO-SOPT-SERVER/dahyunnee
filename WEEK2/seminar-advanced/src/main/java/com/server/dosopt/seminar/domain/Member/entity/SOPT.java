@@ -1,4 +1,4 @@
-package com.server.dosopt.seminar.domain;
+package com.server.dosopt.seminar.domain.Member.entity;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Enumerated;

@@ -1,7 +1,6 @@
-package com.server.dosopt.seminar.dto.request;
+package com.server.dosopt.seminar.domain.Member.dto.request;
 
-import com.server.dosopt.seminar.domain.SOPT;
-import lombok.Data;
+import com.server.dosopt.seminar.domain.Member.entity.SOPT;
 
 /*
 @Data
