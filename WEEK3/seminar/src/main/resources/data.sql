@@ -6,7 +6,7 @@ VALUES
     (4, '티벳여우', '이태희', 25, 'ANDROID', 33);
 
 
-INSERT INTO POST(POST_ID, TITLE, CONTENT, MEMBER_ID)
+INSERT INTO POST(ID, TITLE, CONTENT, MEMBER_ID)
 VALUES
     (1, '안녕하세요 제목1', '안녕하세요 내용1', 1),
     (2, '안녕하세요 제목2', '안녕하세요 내용2', 1),
