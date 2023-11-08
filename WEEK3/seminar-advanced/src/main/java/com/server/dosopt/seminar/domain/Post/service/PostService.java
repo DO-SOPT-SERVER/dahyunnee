@@ -4,6 +4,7 @@ import com.server.dosopt.seminar.domain.Member.entity.Member;
 import com.server.dosopt.seminar.domain.Member.repository.MemberJpaRepository;
 import com.server.dosopt.seminar.domain.Post.dto.request.PostCreateRequest;
 import com.server.dosopt.seminar.domain.Post.dto.request.PostUpdateRequest;
+import com.server.dosopt.seminar.domain.Post.dto.response.PostCreateResponse;
 import com.server.dosopt.seminar.domain.Post.dto.response.PostGetResponse;
 import com.server.dosopt.seminar.domain.Post.entity.Post;
 import com.server.dosopt.seminar.domain.Post.repository.PostJpaRepository;
@@ -16,23 +17,23 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)  // PostService에서 일단 read만 가능하게 설정 후 각 메소드에서 따로 세부설정 가능
+@Transactional(readOnly = true)
 public class PostService {
    private final PostJpaRepository postJpaRepository;
    private final MemberJpaRepository memberJpaRepository;
-   public String create(PostCreateRequest request, Long memberId) {
+   public PostCreateResponse create(PostCreateRequest request, Long memberId) {
       Member member = memberJpaRepository.findByIdOrThrow(memberId);
-      Post post = Post.builder()
-            .title(request.title())
-            .content(request.content())
-            .member(member)
-            .build();      // 비영속 상태
-      Post savedPost = postJpaRepository.save(post); // save를 통해 저장 - void 또는 만든 객체 리턴시킴
-      return savedPost.getId().toString();
+      Post savedPost = postJpaRepository.save(
+            Post.builder()
+                  .title(request.title())
+                  .content(request.content())
+                  .member(member)
+                  .build());
+      return PostCreateResponse.of(savedPost.getId().toString());
    }
 
    public PostGetResponse getById(Long id) {
-      Post post = postJpaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("해당하는 게시글이 없습니다."));
+      Post post = postJpaRepository.findByIdOrThrow(id);
       return PostGetResponse.of(post);
    }
 
@@ -45,15 +46,13 @@ public class PostService {
 
    @Transactional
    public void editContent(Long postId, PostUpdateRequest request) {
-      Post post = postJpaRepository.findById(postId)
-            .orElseThrow(() -> new EntityNotFoundException());
+      Post post = postJpaRepository.findByIdOrThrow(postId);
       post.updateContent(request.content());
    }
 
    @Transactional
    public void deleteById(Long postId) {
-      Post post = postJpaRepository.findById(postId)
-            .orElseThrow(() -> new EntityNotFoundException());
+      Post post = postJpaRepository.findByIdOrThrow(postId);
       postJpaRepository.delete(post);
    }
 }
