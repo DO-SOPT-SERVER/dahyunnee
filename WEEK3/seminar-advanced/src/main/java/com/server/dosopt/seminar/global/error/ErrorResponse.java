@@ -1,17 +1,24 @@
 package com.server.dosopt.seminar.global.error;
 
-import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 public record ErrorResponse (
-   int status,
-   String code,
+   HttpStatus status,
    String message
 ) {
-   public static ErrorResponse of (ErrorCode errorCode) {
+
+   public static ErrorResponse of (CustomErrorCode errorCode) {
       return new ErrorResponse(
             errorCode.getStatus(),
-            errorCode.getCode(),
             errorCode.getMessage()
       );
    }
-};
+
+   public static ErrorResponse of (CommonErrorCode errorCode) {
+      return new ErrorResponse(
+            errorCode.getStatus(),
+            errorCode.getMessage()
+      );
+   }
+
+}

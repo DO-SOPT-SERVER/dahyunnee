@@ -1,5 +1,6 @@
 package com.server.dosopt.seminar.domain.Member.entity;
 
+import com.server.dosopt.seminar.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Member {
+public class Member extends BaseEntity {
 
    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;

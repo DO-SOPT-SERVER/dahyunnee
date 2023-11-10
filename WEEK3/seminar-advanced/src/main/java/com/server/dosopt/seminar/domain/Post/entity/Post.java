@@ -1,7 +1,7 @@
 package com.server.dosopt.seminar.domain.Post.entity;
 
 import com.server.dosopt.seminar.domain.Member.entity.Member;
-import com.server.dosopt.seminar.global.BaseEntity;
+import com.server.dosopt.seminar.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;

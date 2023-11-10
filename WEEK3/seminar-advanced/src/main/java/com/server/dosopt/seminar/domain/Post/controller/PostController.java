@@ -5,14 +5,17 @@ import com.server.dosopt.seminar.domain.Post.dto.request.PostUpdateRequest;
 import com.server.dosopt.seminar.domain.Post.dto.response.PostCreateResponse;
 import com.server.dosopt.seminar.domain.Post.dto.response.PostGetResponse;
 import com.server.dosopt.seminar.domain.Post.service.PostService;
+import com.server.dosopt.seminar.global.exception.BusinessException;
 import com.server.dosopt.seminar.global.result.ResultCode;
 import com.server.dosopt.seminar.global.result.ResultResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.InvalidMediaTypeException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/posts")
 @RequiredArgsConstructor
 public class PostController {
    private static final String CUSTOM_AUTH_ID = "X-Auth-Id";

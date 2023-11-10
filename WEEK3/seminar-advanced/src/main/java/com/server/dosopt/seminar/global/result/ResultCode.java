@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public enum ResultCode {
-
    HEALTH_CHECK_SUCCESS(HttpStatus.OK, "🫀Health Check 성공🫁"),
 
    // MEMBER 관련
@@ -29,5 +28,4 @@ public enum ResultCode {
 
    private final HttpStatus status;
    private final String message;
-
 }

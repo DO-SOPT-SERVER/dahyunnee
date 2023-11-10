@@ -8,7 +8,6 @@ import com.server.dosopt.seminar.domain.Post.dto.response.PostCreateResponse;
 import com.server.dosopt.seminar.domain.Post.dto.response.PostGetResponse;
 import com.server.dosopt.seminar.domain.Post.entity.Post;
 import com.server.dosopt.seminar.domain.Post.repository.PostJpaRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
